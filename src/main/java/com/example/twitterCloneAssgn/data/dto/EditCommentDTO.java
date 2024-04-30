@@ -5,8 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class FindByIDDTO {
-    private String name;
-    private String email;
-    private int userID;
+public class EditCommentDTO {
+    private String commentBody;
+    private int commentId;
+
 }

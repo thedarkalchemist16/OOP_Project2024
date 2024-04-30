@@ -1,8 +1,8 @@
 package com.example.twitterCloneAssgn.data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -11,6 +11,9 @@ import java.util.Date;
 @Entity
 @Table
 @Embeddable
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Posts{
 
     @Id
@@ -21,8 +24,11 @@ public class Posts{
     @Column
     private String postBody;
     @Column
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date date;
-    @Embedded
+
+    @OneToOne
+    @JoinColumn(name ="commentID")
     private Comments comments;
 
 }

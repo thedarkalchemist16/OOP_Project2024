@@ -1,6 +1,5 @@
 package com.example.twitterCloneAssgn.data;
 
-import com.example.twitterCloneAssgn.data.dto.FindByIDDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +8,7 @@ import lombok.Setter;
 @Table
 @Getter
 @Setter
-public class UserDetails extends FindByIDDTO {
+public class UserDetails {
 
   @Id
   @Column
@@ -21,6 +20,4 @@ public class UserDetails extends FindByIDDTO {
   private String email;
   @Column
   private String password;
-  @Embedded
-  private Posts posts;
 }
